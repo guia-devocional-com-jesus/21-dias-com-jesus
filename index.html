@@ -289,53 +289,63 @@
             color: #0a0a1a;
         }
         
-        /* Oferta Section */
+        /* Oferta Section - OTIMIZADA */
         .offer {
             display: none;
             text-align: center;
         }
         
-        .product-container {
+        .offer-content {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+        
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
             margin-bottom: 30px;
         }
         
         .product-image {
-            max-width: 100%;
+            max-width: 220px;
+            flex-shrink: 0;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            margin-top: 20px;
         }
         
         .product-image img {
             width: 100%;
-            height: auto;
             display: block;
+        }
+        
+        .pricing-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
             max-width: 400px;
-            margin: 0 auto;
         }
         
         .offer-headline {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #d4af37;
-            text-align: center;
-            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
         }
         
         .offer-text {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .pricing {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         
         .old-price {
@@ -363,13 +373,13 @@
         
         .payment-info {
             color: #aaa;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .benefits {
             text-align: left;
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
         }
         
         .benefit {
@@ -393,7 +403,7 @@
             padding: 20px 50px;
             border-radius: 50px;
             text-decoration: none;
-            margin: 30px 0;
+            margin: 20px 0;
             box-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
             animation: pulse 2s infinite;
         }
@@ -411,7 +421,7 @@
         }
         
         .urgency {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #ff6666;
             font-weight: bold;
         }
@@ -423,6 +433,7 @@
             padding: 10px 20px;
             border-radius: 50px;
             font-weight: bold;
+            margin-top: 15px;
         }
         
         .popup {
@@ -456,7 +467,6 @@
             
             .offer-headline {
                 font-size: 1.8rem;
-                margin-bottom: 20px;
             }
             
             .options {
@@ -467,23 +477,27 @@
                 width: 100%;
             }
             
-            .product-image img {
-                max-width: 300px;
+            .product-image {
+                max-width: 200px;
             }
             
             .pulse-button {
                 padding: 15px 30px;
                 font-size: 1.1rem;
             }
+            
+            .product-container {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 480px) {
-            .offer-headline {
-                font-size: 1.5rem;
+            .product-image {
+                max-width: 180px;
             }
             
-            .product-image img {
-                max-width: 250px;
+            .pricing-box {
+                padding: 15px;
             }
             
             .new-price {
@@ -498,7 +512,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="headline">Com o GUIA DEVOCIONAL, apenas 10 minutos por dia são suficientes para você se aproximar de Deus.</h1>
-                <p class="subheadline">Responda 3 perguntas rápidas e descubra como transformar sua mente em 21 dias.</p>
+                <p class="subheadline">Responda 5 perguntas rápidas e descubra como transformar sua mente em 21 dias.</p>
                 <a href="#" class="cta-button" id="cta-button">COMEÇAR AGORA</a>
                 
                 <div class="comments-section">
@@ -656,53 +670,57 @@
         </div>
     </section>
     
-    <!-- Oferta Section -->
+    <!-- Oferta Section - OTIMIZADA -->
     <section class="offer" id="offer">
         <div class="container">
-            <h2 class="offer-headline">O resultado é claro: você precisa do GUIA DEVOCIONAL – Transforme sua mente em 21 dias com Jesus</h2>
-            
-            <div class="product-container">
-                <div class="product-image">
-                    <img src="https://raw.githubusercontent.com/guia-devocional-com-jesus/21-dias-com-jesus/refs/heads/main/CAPA%20DO%20GUIA.webp" alt="Guia Devocional - 21 Dias com Jesus">
+            <div class="offer-content">
+                <h2 class="offer-headline">O resultado é claro: você precisa do GUIA DEVOCIONAL – Transforme sua mente em 21 dias com Jesus</h2>
+                
+                <div class="product-container">
+                    <div class="product-image">
+                        <img src="https://raw.githubusercontent.com/Rafaelheber01/21-dias-com-jesus/refs/heads/main/Guiadevocional.webp" alt="Guia Devocional - 21 Dias com Jesus">
+                    </div>
+                    
+                    <div class="pricing-box">
+                        <div class="pricing">
+                            <div class="old-price">R$ 89,90</div>
+                            <div class="new-price">R$ 17,90</div>
+                            <div class="savings">Você economiza R$ 72,00 (80% de desconto)!</div>
+                        </div>
+                        
+                        <a href="https://pay.kiwify.com.br/uNURFLh" class="pulse-button">👉 SIM, QUERO AGORA!</a>
+                        
+                        <div class="payment-info">💳 Pagamento único — acesso imediato</div>
+                    </div>
                 </div>
+                
+                <p class="offer-text">Em apenas 21 dias, dedicando só 10 minutos por dia, você terá paz, clareza e uma conexão verdadeira com Deus. E hoje você não vai pagar o valor normal de <span style="text-decoration: line-through;">R$ 89,90</span>...</p>
+                
+                <div class="benefits">
+                    <div class="benefit">
+                        <span class="benefit-icon">✅</span>
+                        <span>Rotina de apenas 10 minutos por dia</span>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">✅</span>
+                        <span>Versículos guiados + orações práticas</span>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">✅</span>
+                        <span>Acessível no celular e computador</span>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">✅</span>
+                        <span>Transformação espiritual em 3 semanas</span>
+                    </div>
+                </div>
+                
+                <a href="https://pay.kiwify.com.br/uNURFLh" class="pulse-button">👉 SIM, QUERO GARANTIR MEU DESCONTO!</a>
+                
+                <div class="urgency" id="countdown">⚠️ Oferta expira em: 14:59</div>
+                
+                <div class="badge">Mais de 1.200 pessoas já transformaram sua vida em 21 dias</div>
             </div>
-            
-            <p class="offer-text">Em apenas 21 dias, dedicando só 10 minutos por dia, você terá paz, clareza e uma conexão verdadeira com Deus. E hoje você não vai pagar o valor normal de <span style="text-decoration: line-through;">R$ 89,90</span>...</p>
-            
-            <!-- Botão em destaque no topo -->
-            <a href="https://pay.kiwify.com.br/uNURFLh" class="pulse-button">👉 SIM, QUERO MINHA TRANSFORMAÇÃO AGORA!</a>
-            
-            <div class="pricing">
-                <div class="old-price">R$ 89,90</div>
-                <div class="new-price">De <span style="text-decoration: line-through;">R$ 89,90</span> por apenas R$ 17,90</div>
-                <div class="savings">Você economiza R$ 72,00 (80% de desconto)!</div>
-                <div class="payment-info">💳 Pagamento único — acesso imediato ao Guia Devocional</div>
-            </div>
-            
-            <div class="benefits">
-                <div class="benefit">
-                    <span class="benefit-icon">✅</span>
-                    <span>Rotina de apenas 10 minutos por dia</span>
-                </div>
-                <div class="benefit">
-                    <span class="benefit-icon">✅</span>
-                    <span>Versículos guiados + orações práticas</span>
-                </div>
-                <div class="benefit">
-                    <span class="benefit-icon">✅</span>
-                    <span>Acessível no celular e computador</span>
-                </div>
-                <div class="benefit">
-                    <span class="benefit-icon">✅</span>
-                    <span>Transformação espiritual em 3 semanas</span>
-                </div>
-            </div>
-            
-            <a href="https://pay.kiwify.com.br/uNURFLh" class="pulse-button">👉 SIM, QUERO GARANTIR MEU DESCONTO AGORA!</a>
-            
-            <div class="urgency" id="countdown">⚠️ Oferta expira em: 14:59</div>
-            
-            <div class="badge">Mais de 1.200 pessoas já transformaram sua vida em 21 dias</div>
         </div>
     </section>
     
@@ -732,7 +750,7 @@
             },
             {
                 question: "O que mais te impede de ter um tempo consistente com Deus?",
-                options: ["Falta de tempo", "Falta de discipline", "Não sei por onde começar", "Distrações do dia a dia"]
+                options: ["Falta de tiempo", "Falta de disciplina", "Não sei por onde começar", "Distrações do dia a dia"]
             }
         ];
         
@@ -830,6 +848,9 @@
                 
                 // Mostrar popup a cada 30 segundos
                 setInterval(showPopup, 30000);
+                
+                // Scroll suave para o topo da página de oferta
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
         
