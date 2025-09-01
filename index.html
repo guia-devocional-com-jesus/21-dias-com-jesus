@@ -295,23 +295,35 @@
             text-align: center;
         }
         
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
         .product-image {
-            max-width: 300px;
-            margin: 0 auto 30px;
+            max-width: 100%;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
         }
         
         .product-image img {
             width: 100%;
+            height: auto;
             display: block;
+            max-width: 400px;
+            margin: 0 auto;
         }
         
         .offer-headline {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            color: #ffffff;
+            color: #d4af37;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
         }
         
         .offer-text {
@@ -444,6 +456,7 @@
             
             .offer-headline {
                 font-size: 1.8rem;
+                margin-bottom: 20px;
             }
             
             .options {
@@ -454,13 +467,27 @@
                 width: 100%;
             }
             
-            .product-image {
-                max-width: 250px;
+            .product-image img {
+                max-width: 300px;
             }
             
             .pulse-button {
                 padding: 15px 30px;
                 font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .offer-headline {
+                font-size: 1.5rem;
+            }
+            
+            .product-image img {
+                max-width: 250px;
+            }
+            
+            .new-price {
+                font-size: 2rem;
             }
         }
     </style>
@@ -632,11 +659,13 @@
     <!-- Oferta Section -->
     <section class="offer" id="offer">
         <div class="container">
-            <div class="product-image">
-                <img src="https://raw.githubusercontent.com/guia-devocional-com-jesus/21-dias-com-jesus/refs/heads/main/21%20DIAS%20PARA%20O%20MILAGRE%20QUE%20VOCE%20ESPERA.webp" alt="Guia Devocional - 21 Dias com Jesus">
-            </div>
-            
             <h2 class="offer-headline">O resultado é claro: você precisa do GUIA DEVOCIONAL – Transforme sua mente em 21 dias com Jesus</h2>
+            
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/guia-devocional-com-jesus/21-dias-com-jesus/refs/heads/main/CAPA%20DO%20GUIA.webp" alt="Guia Devocional - 21 Dias com Jesus">
+                </div>
+            </div>
             
             <p class="offer-text">Em apenas 21 dias, dedicando só 10 minutos por dia, você terá paz, clareza e uma conexão verdadeira com Deus. E hoje você não vai pagar o valor normal de <span style="text-decoration: line-through;">R$ 89,90</span>...</p>
             
@@ -703,7 +732,7 @@
             },
             {
                 question: "O que mais te impede de ter um tempo consistente com Deus?",
-                options: ["Falta de tempo", "Falta de disciplina", "Não sei por onde começar", "Distrações do dia a dia"]
+                options: ["Falta de tempo", "Falta de discipline", "Não sei por onde começar", "Distrações do dia a dia"]
             }
         ];
         
