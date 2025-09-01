@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Devocional - Transforme sua mente em 21 dias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a1a;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 10, 26, 0.9), rgba(10, 10, 26, 0.9)), 
+                        radial-gradient(circle at top right, #d4af37 0%, transparent 50%);
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .headline {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .subheadline {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: #d4af37;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, #d4af37, #f4e4a6);
+            color: #0a0a1a;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-bottom: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        /* Comentários estilo Facebook - CORRIGIDO */
+        .comments-section {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            color: #1c1e21;
+        }
+        
+        .comment {
+            padding: 12px 0;
+            border-bottom: 1px solid #dddfe2;
+        }
+        
+        .comment:last-child {
+            border-bottom: none;
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .comment-info {
+            flex: 1;
+        }
+        
+        .comment-name {
+            font-weight: 600;
+            color: #385898;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 2px;
+        }
+        
+        .comment-name:hover {
+            text-decoration: underline;
+        }
+        
+        .comment-meta {
+            font-size: 0.8rem;
+            color: #616770;
+            display: flex;
+            align-items: center;
+        }
+        
+        .comment-time {
+            margin-right: 5px;
+        }
+        
+        .comment-privacy {
+            font-size: 0.75rem;
+        }
+        
+        .comment-more {
+            color: #606770;
+            cursor: pointer;
+            padding: 5px;
+            margin: -5px;
+            border-radius: 50%;
+        }
+        
+        .comment-more:hover {
+            background-color: #f2f3f5;
+        }
+        
+        .comment-text {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #1c1e21;
+            line-height: 1.38;
+        }
+        
+        .comment-actions {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #606770;
+            font-weight: 600;
+        }
+        
+        .comment-action {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            padding: 4px 8px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .comment-action:hover {
+            background-color: #f2f3f5;
+        }
+        
+        .comment-action i {
+            margin-right: 4px;
+        }
+        
+        .reactions {
+            display: flex;
+            align-items: center;
+            margin-top: 4px;
+            font-size: 0.8rem;
+        }
+        
+        .reaction-count {
+            background-color: #f2f3f5;
+            border-radius: 10px;
+            padding: 2px 6px;
+            display: flex;
+            align-items: center;
+            color: #606770;
+        }
+        
+        .reaction-emoji {
+            margin-right: 4px;
+        }
+        
+        /* Quiz Section */
+        .quiz {
+            display: none;
+            text-align: center;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(to right, #d4af37, #f4e4a6);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .option {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option:hover, .option.selected {
+            background: rgba(212, 175, 55, 0.3);
+        }
+        
+        .quiz-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .quiz-button {
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .prev-button {
+            background: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+        }
+        
+        .next-button {
+            background: #d4af37;
+            border: 1px solid #d4af37;
+            color: #0a0a1a;
+        }
+        
+        /* Oferta Section */
+        .offer {
+            display: none;
+            text-align: center;
+        }
+        
+        .product-image {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .product-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        .offer-headline {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        
+        .offer-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .pricing {
+            margin-bottom: 40px;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 1.5rem;
+        }
+        
+        .new-price {
+            color: #d4af37;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .savings {
+            background: rgba(212, 175, 55, 0.2);
+            color: #f4e4a6;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 15px auto;
+            display: inline-block;
+        }
+        
+        .payment-info {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+        
+        .benefits {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .benefit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-icon {
+            color: #d4af37;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .pulse-button {
+            display: inline-block;
+            background: linear-gradient(to right, #d4af37, #f4e4a6);
+            color: #0a0a1a;
+            font-weight: bold;
+            font-size: 1.3rem;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 30px 0;
+            box-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+        
+        .urgency {
+            margin-bottom: 20px;
+            color: #ff6666;
+            font-weight: bold;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+        
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-left: 4px solid #d4af37;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+            max-width: 300px;
+            animation: slideIn 0.5s forwards;
+            z-index: 1000;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 2rem;
+            }
+            
+            .subheadline {
+                font-size: 1.1rem;
+            }
+            
+            .offer-headline {
+                font-size: 1.8rem;
+            }
+            
+            .options {
+                flex-direction: column;
+            }
+            
+            .option {
+                width: 100%;
+            }
+            
+            .product-image {
+                max-width: 250px;
+            }
+            
+            .pulse-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="headline">Com o GUIA DEVOCIONAL, apenas 10 minutos por dia são suficientes para você se aproximar de Deus.</h1>
+                <p class="subheadline">Responda 3 perguntas rápidas e descubra como transformar sua mente em 21 dias.</p>
+                <a href="#" class="cta-button" id="cta-button">COMEÇAR AGORA</a>
+                
+                <div class="comments-section">
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="profile-pic">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Evelyn Santos">
+                            </div>
+                            <div class="comment-info">
+                                <a href="#" class="comment-name">Evelyn Santos</a>
+                                <div class="comment-meta">
+                                    <span class="comment-time">2h</span>
+                                    <span class="comment-privacy">· <i class="fas fa-globe-americas"></i></span>
+                                </div>
+                            </div>
+                            <div class="comment-more">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                        <p class="comment-text">Em poucos dias já senti paz e clareza na minha mente 🙏</p>
+                        <div class="reactions">
+                            <div class="reaction-count">
+                                <span class="reaction-emoji">👍</span> 142
+                            </div>
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-action">
+                                <i class="far fa-thumbs-up"></i> Curtir
+                            </div>
+                            <div class="comment-action">
+                                <i class="far fa-comment"></i> Responder
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="profile-pic">
+                                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Israel Moraes">
+                            </div>
+                            <div class="comment-info">
+                                <a href="#" class="comment-name">Israel Moraes</a>
+                                <div class="comment-meta">
+                                    <span class="comment-time">3h</span>
+                                    <span class="comment-privacy">· <i class="fas fa-globe-americas"></i></span>
+                                </div>
+                            </div>
+                            <div class="comment-more">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                        <p class="comment-text">Simples e profundo, mudou minha rotina de oração. Recomendo demais!</p>
+                        <div class="reactions">
+                            <div class="reaction-count">
+                                <span class="reaction-emoji">👍</span> 87
+                            </div>
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-action">
+                                <i class="far fa-thumbs-up"></i> Curtir
+                            </div>
+                            <div class="comment-action">
+                                <i class="far fa-comment"></i> Responder
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="profile-pic">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Isaac Rodrigues">
+                            </div>
+                            <div class="comment-info">
+                                <a href="#" class="comment-name">Isaac Rodrigues</a>
+                                <div class="comment-meta">
+                                    <span class="comment-time">1h</span>
+                                    <span class="comment-privacy">· <i class="fas fa-globe-americas"></i></span>
+                                </div>
+                            </div>
+                            <div class="comment-more">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                        <p class="comment-text">Comecei ontem e já senti a diferença. Vale cada centavo.</p>
+                        <div class="reactions">
+                            <div class="reaction-count">
+                                <span class="reaction-emoji">👍</span> 65
+                            </div>
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-action">
+                                <i class="far fa-thumbs-up"></i> Curtir
+                            </div>
+                            <div class="comment-action">
+                                <i class="far fa-comment"></i> Responder
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="profile-pic">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Carolina Alves">
+                            </div>
+                            <div class="comment-info">
+                                <a href="#" class="comment-name">Carolina Alves</a>
+                                <div class="comment-meta">
+                                    <span class="comment-time">4h</span>
+                                    <span class="comment-privacy">· <i class="fas fa-globe-americas"></i></span>
+                                </div>
+                            </div>
+                            <div class="comment-more">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                        <p class="comment-text">Conteúdo transformador, direto ao ponto. Estou amando ❤️</p>
+                        <div class="reactions">
+                            <div class="reaction-count">
+                                <span class="reaction-emoji">👍</span> 103
+                            </div>
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-action">
+                                <i class="far fa-thumbs-up"></i> Curtir
+                            </div>
+                            <div class="comment-action">
+                                <i class="far fa-comment"></i> Responder
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quiz Section -->
+    <section class="quiz" id="quiz">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            
+            <div class="quiz-content">
+                <div class="question" id="question">Com que frequência você busca tempo com Deus?</div>
+                
+                <div class="options" id="options">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+                
+                <div class="quiz-buttons">
+                    <div class="quiz-button prev-button" id="prev-button">Voltar</div>
+                    <div class="quiz-button next-button" id="next-button">Próximo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Oferta Section -->
+    <section class="offer" id="offer">
+        <div class="container">
+            <div class="product-image">
+                <img src="https://raw.githubusercontent.com/Rafaelheber01/21-dias-com-jesus/refs/heads/main/Guiadevocional.webp" alt="Guia Devocional - 21 Dias com Jesus">
+            </div>
+            
+            <h2 class="offer-headline">O resultado é claro: você precisa do GUIA DEVOCIONAL – Transforme sua mente em 21 dias com Jesus</h2>
+            
+            <p class="offer-text">Em apenas 21 dias, dedicando só 10 minutos por dia, você terá paz, clareza e uma conexão verdadeira com Deus. E hoje você não vai pagar o valor normal de <span style="text-decoration: line-through;">R$ 89,90</span>...</p>
+            
+            <!-- Botão em destaque no topo -->
+            <a href="https://www.google.com" class="pulse-button">👉 SIM, QUERO MINHA TRANSFORMAÇÃO AGORA!</a>
+            
+            <div class="pricing">
+                <div class="old-price">R$ 89,90</div>
+                <div class="new-price">De <span style="text-decoration: line-through;">R$ 89,90</span> por apenas R$ 17,90</div>
+                <div class="savings">Você economiza R$ 72,00 (80% de desconto)!</div>
+                <div class="payment-info">💳 Pagamento único — acesso imediato ao Guia Devocional</div>
+            </div>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <span class="benefit-icon">✅</span>
+                    <span>Rotina de apenas 10 minutos por dia</span>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">✅</span>
+                    <span>Versículos guiados + orações práticas</span>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">✅</span>
+                    <span>Acessível no celular e computador</span>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">✅</span>
+                    <span>Transformação espiritual em 3 semanas</span>
+                </div>
+            </div>
+            
+            <a href="https://www.google.com" class="pulse-button">👉 SIM, QUERO GARANTIR MEU DESCONTO AGORA!</a>
+            
+            <div class="urgency" id="countdown">⚠️ Oferta expira em: 14:59</div>
+            
+            <div class="badge">Mais de 1.200 pessoas já transformaram sua vida em 21 dias</div>
+        </div>
+    </section>
+    
+    <!-- Popup de notificação -->
+    <div class="popup" id="popup">
+        Maria de Curitiba acabou de adquirir o Guia Devocional ✅
+    </div>
+    
+    <script>
+        // Dados do quiz (aumentado com mais perguntas)
+        const quizData = [
+            {
+                question: "Com que frequência você busca tempo com Deus?",
+                options: ["Todos os dias", "Algumas vezes na semana", "Quase nunca", "Só aos finais de semana"]
+            },
+            {
+                question: "Quanto tempo você pode dedicar diariamente?",
+                options: ["5-10 minutos", "15 minutos", "20-30 minutos", "Mais de 30 minutos"]
+            },
+            {
+                question: "Qual seu maior objetivo espiritual?",
+                options: ["Renovar minha mente", "Criar disciplina espiritual", "Reduzir ansiedade/medo", "Me aproximar mais de Jesus"]
+            },
+            {
+                question: "Como você descreveria sua vida de oração atualmente?",
+                options: ["Consistente e significativa", "Regular mas sem profundidade", "Ocasional e superficial", "Quase inexistente"]
+            },
+            {
+                question: "O que mais te impede de ter um tempo consistente com Deus?",
+                options: ["Falta de tempo", "Falta de disciplina", "Não sei por onde começar", "Distrações do dia a dia"]
+            }
+        ];
+        
+        // Variáveis de estado
+        let currentQuestion = 0;
+        let userAnswers = [];
+        
+        // Elementos DOM
+        const heroSection = document.getElementById('hero');
+        const quizSection = document.getElementById('quiz');
+        const offerSection = document.getElementById('offer');
+        const ctaButton = document.getElementById('cta-button');
+        const progressBar = document.getElementById('progress');
+        const questionElement = document.getElementById('question');
+        const optionsContainer = document.getElementById('options');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+        const countdownElement = document.getElementById('countdown');
+        const popup = document.getElementById('popup');
+        
+        // Inicializar quiz
+        function initQuiz() {
+            heroSection.style.display = 'none';
+            quizSection.style.display = 'flex';
+            updateProgressBar();
+            showQuestion();
+        }
+        
+        // Atualizar barra de progresso
+        function updateProgressBar() {
+            const progressPercentage = (currentQuestion / quizData.length) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+        }
+        
+        // Mostrar pergunta atual
+        function showQuestion() {
+            const question = quizData[currentQuestion];
+            questionElement.textContent = question.question;
+            
+            optionsContainer.innerHTML = '';
+            question.options.forEach(option => {
+                const optionElement = document.createElement('div');
+                optionElement.classList.add('option');
+                optionElement.textContent = option;
+                optionElement.addEventListener('click', () => selectOption(option));
+                optionsContainer.appendChild(optionElement);
+            });
+            
+            // Atualizar visibilidade dos botões
+            prevButton.style.display = currentQuestion === 0 ? 'none' : 'block';
+            nextButton.textContent = currentQuestion === quizData.length - 1 ? 'Finalizar' : 'Próximo';
+            
+            // Selecionar opção anterior se existir
+            if (userAnswers[currentQuestion]) {
+                const options = document.querySelectorAll('.option');
+                options.forEach(opt => {
+                    if (opt.textContent === userAnswers[currentQuestion]) {
+                        opt.classList.add('selected');
+                    }
+                });
+            }
+        }
+        
+        // Selecionar opção
+        function selectOption(option) {
+            userAnswers[currentQuestion] = option;
+            
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => {
+                opt.classList.remove('selected');
+                if (opt.textContent === option) {
+                    opt.classList.add('selected');
+                }
+            });
+        }
+        
+        // Navegar para próxima pergunta
+        function nextQuestion() {
+            if (!userAnswers[currentQuestion]) {
+                alert('Por favor, selecione uma opção antes de continuar.');
+                return;
+            }
+            
+            if (currentQuestion < quizData.length - 1) {
+                currentQuestion++;
+                updateProgressBar();
+                showQuestion();
+            } else {
+                // Finalizar quiz e mostrar oferta
+                quizSection.style.display = 'none';
+                offerSection.style.display = 'flex';
+                
+                // Iniciar contagem regressiva
+                startCountdown();
+                
+                // Mostrar popup a cada 30 segundos
+                setInterval(showPopup, 30000);
+            }
+        }
+        
+        // Voltar para pergunta anterior
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                updateProgressBar();
+                showQuestion();
+            }
+        }
+        
+        // Iniciar contagem regressiva
+        function startCountdown() {
+            let minutes = 14;
+            let seconds = 59;
+            
+            const countdownInterval = setInterval(() => {
+                countdownElement.textContent = `⚠️ Oferta expira em: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (seconds === 0) {
+                    if (minutes === 0) {
+                        clearInterval(countdownInterval);
+                    } else {
+                        minutes--;
+                        seconds = 59;
+                    }
+                } else {
+                    seconds--;
+                }
+            }, 1000);
+        }
+        
+        // Mostrar popup de notificação
+        function showPopup() {
+            popup.style.display = 'block';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Event Listeners
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            initQuiz();
+        });
+        
+        nextButton.addEventListener('click', nextQuestion);
+        prevButton.addEventListener('click', prevQuestion);
+        
+        // Mostrar primeiro popup após 5 segundos
+        setTimeout(showPopup, 5000);
+    </script>
+</body>
+</html>
