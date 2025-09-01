@@ -79,7 +79,7 @@
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
         }
         
-        /* Comentários estilo Facebook - CORRIGIDO */
+        /* Comentários estilo Facebook - MELHORADO */
         .comments-section {
             max-width: 600px;
             margin: 0 auto;
@@ -321,6 +321,11 @@
         .product-image img {
             width: 100%;
             display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-image:hover img {
+            transform: scale(1.05);
         }
         
         .pricing-box {
@@ -328,6 +333,7 @@
             border-radius: 10px;
             padding: 20px;
             max-width: 400px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
         
         .offer-headline {
@@ -386,6 +392,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            font-size: 1.1rem;
         }
         
         .benefit-icon {
@@ -406,6 +413,12 @@
             margin: 20px 0;
             box-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
             animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+        
+        .pulse-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.6);
         }
         
         @keyframes pulse {
@@ -424,6 +437,7 @@
             margin-bottom: 15px;
             color: #ff6666;
             font-weight: bold;
+            font-size: 1.1rem;
         }
         
         .badge {
@@ -440,14 +454,21 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             border-left: 4px solid #d4af37;
-            padding: 15px;
-            border-radius: 5px;
+            padding: 12px 15px;
+            border-radius: 6px;
             display: none;
             max-width: 300px;
             animation: slideIn 0.5s forwards;
             z-index: 1000;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .popup i {
+            color: #d4af37;
+            margin-right: 8px;
         }
         
         @keyframes slideIn {
@@ -489,6 +510,12 @@
             .product-container {
                 flex-direction: column;
             }
+            
+            .popup {
+                right: 10px;
+                bottom: 10px;
+                max-width: 280px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -502,6 +529,11 @@
             
             .new-price {
                 font-size: 2rem;
+            }
+            
+            .popup {
+                max-width: 250px;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -532,7 +564,7 @@
                                 <i class="fas fa-ellipsis-h"></i>
                             </div>
                         </div>
-                        <p class="comment-text">Em poucos dias já senti paz e clareza na minha mente 🙏</p>
+                        <p class="comment-text">Em menos de uma semana já senti uma paz enorme no coração 🙏✨ Recomendo demais!</p>
                         <div class="reactions">
                             <div class="reaction-count">
                                 <span class="reaction-emoji">👍</span> 142
@@ -564,10 +596,10 @@
                                 <i class="fas fa-ellipsis-h"></i>
                             </div>
                         </div>
-                        <p class="comment-text">Simples e profundo, mudou minha rotina de oração. Recomendo demais!</p>
+                        <p class="comment-text">Achei que não ia conseguir manter a disciplina, mas como é só 10 minutinhos por dia ficou muito fácil 😍</p>
                         <div class="reactions">
                             <div class="reaction-count">
-                                <span class="reaction-emoji">👍</span> 87
+                                <span class="reaction-emoji">👍</span> 98
                             </div>
                         </div>
                         <div class="comment-actions">
@@ -596,10 +628,10 @@
                                 <i class="fas fa-ellipsis-h"></i>
                             </div>
                         </div>
-                        <p class="comment-text">Comecei ontem e já senti a diferença. Vale cada centavo.</p>
+                        <p class="comment-text">Senti Deus falando comigo em cada oração do guia. Vale muito mais que o preço cobrado ❤️</p>
                         <div class="reactions">
                             <div class="reaction-count">
-                                <span class="reaction-emoji">👍</span> 65
+                                <span class="reaction-emoji">👍</span> 120
                             </div>
                         </div>
                         <div class="comment-actions">
@@ -628,10 +660,42 @@
                                 <i class="fas fa-ellipsis-h"></i>
                             </div>
                         </div>
-                        <p class="comment-text">Conteúdo transformador, direto ao ponto. Estou amando ❤️</p>
+                        <p class="comment-text">Estava ansioso e perdido… em 21 dias minha mente está renovada. Obrigado por esse material 👏</p>
                         <div class="reactions">
                             <div class="reaction-count">
-                                <span class="reaction-emoji">👍</span> 103
+                                <span class="reaction-emoji">👍</span> 85
+                            </div>
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-action">
+                                <i class="far fa-thumbs-up"></i> Curtir
+                            </div>
+                            <div class="comment-action">
+                                <i class="far fa-comment"></i> Responder
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="profile-pic">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Marcelo Duarte">
+                            </div>
+                            <div class="comment-info">
+                                <a href="#" class="comment-name">Marcelo Duarte</a>
+                                <div class="comment-meta">
+                                    <span class="comment-time">2h</span>
+                                    <span class="comment-privacy">· <i class="fas fa-globe-americas"></i></span>
+                                </div>
+                            </div>
+                            <div class="comment-more">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                        <p class="comment-text">Já tinha tentado outros métodos, mas esse foi o único que realmente consegui seguir até o fim 🙌🔥</p>
+                        <div class="reactions">
+                            <div class="reaction-count">
+                                <span class="reaction-emoji">👍</span> 76
                             </div>
                         </div>
                         <div class="comment-actions">
@@ -726,11 +790,12 @@
     
     <!-- Popup de notificação -->
     <div class="popup" id="popup">
-        Maria de Curitiba acabou de adquirir o Guia Devocional ✅
+        <i class="fas fa-check-circle"></i>
+        <span id="popup-text">Maria de Curitiba acabou de adquirir o Guia Devocional</span>
     </div>
     
     <script>
-        // Dados do quiz (aumentado com mais perguntas)
+        // Dados do quiz (5 perguntas)
         const quizData = [
             {
                 question: "Com que frequência você busca tempo com Deus?",
@@ -750,13 +815,29 @@
             },
             {
                 question: "O que mais te impede de ter um tempo consistente com Deus?",
-                options: ["Falta de tiempo", "Falta de disciplina", "Não sei por onde começar", "Distrações do dia a dia"]
+                options: ["Falta de tempo", "Falta de disciplina", "Não sei por onde começar", "Distrações do dia a dia"]
             }
+        ];
+        
+        // Lista de nomes e cidades para os popups
+        const nomes = [
+            "Ana", "Carlos", "Mariana", "João", "Fernanda", "Ricardo", "Patrícia", "Rodrigo", 
+            "Amanda", "Bruno", "Juliana", "Leonardo", "Tatiane", "Marcos", "Camila", "Paulo",
+            "Luciana", "Diego", "Vanessa", "Alex", "Simone", "Rafael", "Carolina", "Thiago",
+            "Isabela", "Felipe", "Larissa", "André", "Natália", "Vinícius", "Beatriz", "Gabriel"
+        ];
+        
+        const cidades = [
+            "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre", "Brasília", "Salvador",
+            "Fortaleza", "Curitiba", "Recife", "Manaus", "Goiânia", "Belém", "Florianópolis", "Natal",
+            "Vitória", "Campo Grande", "Cuiabá", "João Pessoa", "Maceió", "Teresina", "Aracaju", "Palmas",
+            "Porto Velho", "Boa Vista", "Rio Branco", "Macapá", "Santos", "Campinas", "Uberlândia"
         ];
         
         // Variáveis de estado
         let currentQuestion = 0;
         let userAnswers = [];
+        let popupInterval;
         
         // Elementos DOM
         const heroSection = document.getElementById('hero');
@@ -770,6 +851,20 @@
         const nextButton = document.getElementById('next-button');
         const countdownElement = document.getElementById('countdown');
         const popup = document.getElementById('popup');
+        const popupText = document.getElementById('popup-text');
+        
+        // Função para gerar popup com nome e cidade aleatórios
+        function showRandomPopup() {
+            const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
+            const cidadeAleatoria = cidades[Math.floor(Math.random() * cidades.length)];
+            
+            popupText.textContent = `${nomeAleatorio} de ${cidadeAleatoria} acabou de adquirir o Guia Devocional`;
+            popup.style.display = 'block';
+            
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 5000);
+        }
         
         // Inicializar quiz
         function initQuiz() {
@@ -846,8 +941,12 @@
                 // Iniciar contagem regressiva
                 startCountdown();
                 
-                // Mostrar popup a cada 30 segundos
-                setInterval(showPopup, 30000);
+                // Iniciar popups apenas na página final
+                clearInterval(popupInterval);
+                popupInterval = setInterval(showRandomPopup, 15000);
+                
+                // Mostrar primeiro popup após 3 segundos
+                setTimeout(showRandomPopup, 3000);
                 
                 // Scroll suave para o topo da página de oferta
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -884,14 +983,6 @@
             }, 1000);
         }
         
-        // Mostrar popup de notificação
-        function showPopup() {
-            popup.style.display = 'block';
-            setTimeout(() => {
-                popup.style.display = 'none';
-            }, 5000);
-        }
-        
         // Event Listeners
         ctaButton.addEventListener('click', function(e) {
             e.preventDefault();
@@ -900,9 +991,6 @@
         
         nextButton.addEventListener('click', nextQuestion);
         prevButton.addEventListener('click', prevQuestion);
-        
-        // Mostrar primeiro popup após 5 segundos
-        setTimeout(showPopup, 5000);
     </script>
 </body>
 </html>
